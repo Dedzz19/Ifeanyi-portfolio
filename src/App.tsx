@@ -25,69 +25,73 @@ const CLIENTS = [
   "PRADA",
   "TOM FORD",
   "CALVIN KLEIN",
-  "GIVENCHY",
-  "BALENCIAGA",
 ];
 
 const SPECS = [
-  { label: "Height", value: '6\'2" / 188 cm' },
-  { label: "Chest", value: '38" / 96 cm' },
-  { label: "Waist", value: '31" / 79 cm' },
-  { label: "Inseam", value: '33" / 84 cm' },
-  { label: "Shoe", value: "11 US / 44 EU" },
-  { label: "Eyes", value: "Hazel" },
-  { label: "Hair", value: "Dark Brown" },
-  { label: "Agency", value: "Elite Models" },
+  { label: "Height", value: '5\'10" / 177.8 cm' },
+  { label: "Chest", value: '41"' },
+  { label: "Waist", value: '29"' },
+  { label: "Inseam", value: '33" ' },
+  { label: "Shoe", value: "10 US / 43 EU" },
+  { label: "Eyes", value: "Brown" },
+  { label: "Hair", value: "Brown" },
+  { label: "Agency", value: "None" },
 ];
 
 const PORTFOLIO = [
   {
     id: 1,
-    url: "https://images.unsplash.com/photo-1635380241498-e022e7b4646d?w=800&h=1100&fit=crop&auto=format",
+    url: "../public/images/Fight.jpeg",
     campaign: "Maison Laurent",
     type: "Runway — SS 2024",
     col: "1 / 2",
     row: "1 / 3",
+    align: "center",
   },
   {
     id: 2,
-    url: "https://images.unsplash.com/photo-1637321709288-82692530f086?w=900&h=600&fit=crop&auto=format",
+    url: "../public/images/mogshot.jpeg",
     campaign: "Nordic Skin",
     type: "Campaign — AW 2023",
     col: "2 / 4",
     row: "1 / 2",
+    align: "center",
   },
   {
     id: 3,
-    url: "https://images.unsplash.com/photo-1629790457423-3adc0c876be5?w=600&h=800&fit=crop&auto=format",
+    url: "../public/images/Teniss.jpeg",
     campaign: "Vogue Italia",
     type: "Editorial — March 2024",
     col: "2 / 3",
     row: "2 / 3",
+    align: "top",
   },
   {
     id: 4,
-    url: "https://images.unsplash.com/photo-1595790753283-3c164baddb72?w=600&h=800&fit=crop&auto=format",
+    url: "../public/images/oldies.jpeg",
     campaign: "Armani Privé",
     type: "Campaign — FW 2023",
     col: "3 / 4",
     row: "2 / 3",
+    align: "top",
   },
   {
     id: 5,
-    url: "https://images.unsplash.com/photo-1632387169943-3f254ead7300?w=900&h=600&fit=crop&auto=format",
+    url: "../public/images/prison.jpeg",
     campaign: "GQ Magazine",
     type: "Cover — July 2024",
     col: "1 / 3",
     row: "3 / 4",
+    align: "top",
   },
   {
     id: 6,
-    url: "https://images.unsplash.com/photo-1635380241964-1454aa815b61?w=700&h=800&fit=crop&auto=format",
+    url: "../public/images/Bag.jpeg",
     campaign: "Dior Homme",
     type: "Fragrance — 2024",
     col: "3 / 4",
     row: "3 / 4",
+    align: "top",
   },
 ];
 
@@ -127,7 +131,7 @@ export default function App() {
             onClick={() => scrollTo("hero")}
             className="font-heading text-xs tracking-[0.35em] uppercase text-foreground font-bold hover:text-accent transition-colors duration-300"
           >
-            Adrien Beaumont
+            Ifeanyi Ekwomadu
           </button>
 
           <div className="hidden md:flex items-center gap-10">
@@ -171,8 +175,8 @@ export default function App() {
       {/* HERO */}
       <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden bg-neutral-900">
         <img
-          src="https://images.unsplash.com/photo-1652727556986-a51d30174605?w=1800&h=2400&fit=crop&auto=format"
-          alt="Adrien Beaumont — editorial hero portrait"
+          src="../public/images/Back.jpeg"
+          alt="Ifeanyi Ekwomadu — editorial hero portrait"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
@@ -183,21 +187,21 @@ export default function App() {
             className="font-mono text-[10px] tracking-[0.45em] uppercase text-accent mb-5"
             style={{ animation: "fadeInUp 0.8s ease both 0.2s" }}
           >
-            Male Model — Paris / New York / Milan
+            Male Model —  Nigeria
           </p>
 
           <h1
             className="font-heading text-[clamp(4.5rem,14vw,11rem)] leading-[0.88] font-black uppercase text-foreground mb-8"
             style={{ animation: "fadeInUp 0.9s ease both 0.4s" }}
           >
-            Adrien<br />Beaumont
+            Ifeanyi<br />Ekwomadu
           </h1>
 
           <p
             className="text-sm text-muted-foreground max-w-xs leading-relaxed mb-10"
             style={{ animation: "fadeInUp 0.9s ease both 0.6s" }}
           >
-            High-fashion editorial and runway model represented by Elite Model Management worldwide.
+            High-fashion editorial and runway model represented by Elite Model Management .
           </p>
 
           <div
@@ -262,10 +266,12 @@ export default function App() {
               style={{ gridColumn: item.col, gridRow: item.row }}
               onMouseEnter={() => setHoveredItem(item.id)}
               onMouseLeave={() => setHoveredItem(null)}
+              onClick={() => { scrollTo("contact") }}
             >
               <img
                 src={item.url}
                 alt={item.campaign}
+                style={{ objectPosition: item.align === "top" ? "center top" : "center" }}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-background/0 group-hover:bg-background/55 transition-colors duration-500" />
@@ -307,8 +313,8 @@ export default function App() {
       <section id="about" className="border-t border-border grid md:grid-cols-2">
         <div className="relative h-[65vh] md:h-auto min-h-[500px] bg-card overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1771092358890-0db24db44e56?w=900&h=1200&fit=crop&auto=format"
-            alt="Adrien Beaumont — studio portrait"
+            src="../public/images/white.jpeg"
+            alt="Ifeanyi Ekwomadu — studio portrait"
             className="w-full h-full object-cover object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
@@ -379,7 +385,7 @@ export default function App() {
         <blockquote className="max-w-3xl mx-auto">
           <div className="w-8 h-px bg-accent mb-10" />
           <p className="font-heading text-[clamp(1.5rem,3.5vw,2.5rem)] font-bold italic leading-snug text-foreground mb-10">
-            &ldquo;Adrien brings an unusual stillness to the frame — a rare quality that photographers chase and rarely find. He doesn&apos;t perform; he inhabits.&rdquo;
+            &ldquo;Ifeanyi brings an unusual stillness to the frame — a rare quality that photographers chase and rarely find. He doesn&apos;t perform; he inhabits.&rdquo;
           </p>
           <footer className="flex items-center gap-4">
             <div className="w-5 h-px bg-border" />
@@ -418,7 +424,8 @@ export default function App() {
 
           <div className="flex items-center gap-6 border-t border-border pt-8">
             <a
-              href="#"
+              href="https://www.instagram.com/ifeanyi_ekwomadu/"
+              target="_blank"
               className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground hover:text-foreground transition-colors group"
             >
               {/* <Instagram size={13} /> */}
@@ -489,9 +496,9 @@ export default function App() {
 
       {/* FOOTER */}
       <footer className="border-t border-border px-8 md:px-14 py-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <span className="font-heading text-[11px] tracking-[0.35em] uppercase font-bold">Adrien Beaumont</span>
+        <span className="font-heading text-[11px] tracking-[0.35em] uppercase font-bold">Ifeanyi Ekwomadu</span>
         <span className="font-mono text-[9px] tracking-[0.3em] uppercase text-muted-foreground">
-          © 2024 — All Rights Reserved
+          © 2026 — All Rights Reserved
         </span>
         <div className="flex items-center gap-8">
           <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-muted-foreground">Elite Model Management</span>
