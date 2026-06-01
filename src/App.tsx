@@ -41,7 +41,7 @@ const SPECS = [
 const PORTFOLIO = [
   {
     id: 1,
-    url: "../public/images/Fight.jpeg",
+    url: "/images/Fight.jpeg",
     campaign: "Maison Laurent",
     type: "Runway — SS 2024",
     col: "1 / 2",
@@ -50,7 +50,7 @@ const PORTFOLIO = [
   },
   {
     id: 2,
-    url: "../public/images/mogshot.jpeg",
+    url: "/images/mogshot.jpeg",
     campaign: "Nordic Skin",
     type: "Campaign — AW 2023",
     col: "2 / 4",
@@ -59,7 +59,7 @@ const PORTFOLIO = [
   },
   {
     id: 3,
-    url: "../public/images/Teniss.jpeg",
+    url: "/images/Teniss.jpeg",
     campaign: "Vogue Italia",
     type: "Editorial — March 2024",
     col: "2 / 3",
@@ -68,7 +68,7 @@ const PORTFOLIO = [
   },
   {
     id: 4,
-    url: "../public/images/oldies.jpeg",
+    url: "/images/oldies.jpeg",
     campaign: "Armani Privé",
     type: "Campaign — FW 2023",
     col: "3 / 4",
@@ -77,7 +77,7 @@ const PORTFOLIO = [
   },
   {
     id: 5,
-    url: "../public/images/prison.jpeg",
+    url: "/images/prison.jpeg",
     campaign: "GQ Magazine",
     type: "Cover — July 2024",
     col: "1 / 3",
@@ -86,7 +86,7 @@ const PORTFOLIO = [
   },
   {
     id: 6,
-    url: "../public/images/Bag.jpeg",
+    url: "/images/Bag.jpeg",
     campaign: "Dior Homme",
     type: "Fragrance — 2024",
     col: "3 / 4",
@@ -175,7 +175,7 @@ export default function App() {
       {/* HERO */}
       <section id="hero" className="relative h-screen min-h-[600px] overflow-hidden bg-neutral-900">
         <img
-          src="../public/images/Back.jpeg"
+          src="/images/Back.jpeg"
           alt="Ifeanyi Ekwomadu — editorial hero portrait"
           className="absolute inset-0 w-full h-full object-cover object-center opacity-70"
         />
@@ -293,7 +293,7 @@ export default function App() {
         {/* Mobile: stacked */}
         <div className="md:hidden grid grid-cols-2 gap-2">
           {PORTFOLIO.map((item) => (
-            <div key={item.id} className="relative overflow-hidden bg-card aspect-[3/4] group">
+            <div key={item.id} className="relative overflow-hidden bg-card aspect-3/4 group">
               <img
                 src={item.url}
                 alt={item.campaign}
@@ -311,13 +311,13 @@ export default function App() {
 
       {/* ABOUT */}
       <section id="about" className="border-t border-border grid md:grid-cols-2">
-        <div className="relative h-[65vh] md:h-auto min-h-[500px] bg-card overflow-hidden">
+        <div className="relative h-[65vh] md:h-auto min-h-125 bg-card overflow-hidden">
           <img
-            src="../public/images/white.jpeg"
+            src="/images/white.jpeg"
             alt="Ifeanyi Ekwomadu — studio portrait"
             className="w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-background/40 to-transparent" />
         </div>
 
         <div className="px-8 md:px-14 py-16 md:py-28 flex flex-col justify-center bg-card">
