@@ -68,7 +68,7 @@ const PORTFOLIO = [
   },
   {
     id: 4,
-    url: "/images/oldies.jpeg",
+    url: "/images/Oldies.jpeg",
     campaign: "Armani Privé",
     type: "Campaign — FW 2023",
     col: "3 / 4",
@@ -77,7 +77,7 @@ const PORTFOLIO = [
   },
   {
     id: 5,
-    url: "/images/prison.jpeg",
+    url: "/images/Prison.jpeg",
     campaign: "GQ Magazine",
     type: "Cover — July 2024",
     col: "1 / 3",
